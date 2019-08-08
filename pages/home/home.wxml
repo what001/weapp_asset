@@ -1,0 +1,75 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <view class="title">
+    <image wx:if="{{ hasUserInfo }}" class="logo" src="{{userInfo.avatarUrl}}"  />
+    <view class="title-text">资产管理系统</view>
+    <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+  </view>
+  <view class="desc">随时随地，轻松管理您的资产</view>
+
+
+  <!-- <view class="userinfo">
+    <van-button 
+      wx:if="{{!hasUserInfo && canIUse}}" 
+      type="primary"
+      plain round
+      open-type="getUserInfo" 
+      bind:getuserinfo="getUserInfo"> 获取头像 
+    </van-button>
+  </view> -->
+
+  
+  <!-- <view class="menu">
+    <van-button 
+      wx:if="{{!hasPhoneNumber}}" 
+      type="primary"
+      plain round
+      open-type="getPhoneNumber" 
+      bind:getphonenumber="getPhoneNumber"> 绑定手机号 
+    </van-button>
+  </view> -->
+
+  <van-dialog
+    title="绑定手机号" 
+    message="查询资产时，将使用你的手机号作为索引，请确认操作。"
+    show="{{ false }}"
+    show-cancel-button
+    confirm-button-open-type="getPhoneNumber"
+    bind:close="onClose"
+    bind:getphonenumber="getPhoneNumber"
+  >
+    
+  </van-dialog>
+  <van-dialog id="van-dialog" />
+
+  <view class="menus">
+    <van-button  
+      type="primary"
+      plain round hairline
+      size="large"
+      bind:click="goTo"
+      data-url="../index/index"
+      > {{ phoneBtn }}
+    </van-button>
+  </view>
+  <view class="menus">
+    <van-button  
+      type="primary"
+      plain round hairline
+      size="large"
+      bind:click="goTo"
+      data-url="../index/index"
+      > 资产盘点 
+    </van-button>
+  </view>
+  <view class="menus">
+    <van-button  
+      type="primary"
+      plain round hairline
+      size="large"
+      bind:click="goTo"
+      data-url="../list/list"
+      > 资产列表
+    </van-button>
+  </view>
+</view>

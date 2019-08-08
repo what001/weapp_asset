@@ -1,0 +1,54 @@
+<!--资产列表-->
+<view class="container">
+  <van-search
+    value="{{ searchKey }}"
+    placeholder="请输入搜索关键词"
+    show-action
+    shape="round"
+    bind:search="onSearch"
+    bind:cancel="onCancel"
+  />
+
+  <van-cell-group wx:for="{{ assetList }}" wx:for-item="asset" wx:key="title" custom-class="card">
+    
+    <van-cell title="{{ asset.title }}" label="{{ asset.desc }}" size="large" icon="cashier-o"        custom-class="card-header">
+      <van-tag mark plain size="medium" type="success" >{{ asset.status }}</van-tag>
+    </van-cell>
+
+    <van-cell 
+      wx:for="{{ asset.other }}" 
+      wx:for-item="other" 
+      wx:key="key"
+      title="{{ other.key }}" 
+      value="{{ other.value }}" 
+      border="{{ false }}" 
+      custom-class="context" />
+    
+    <van-cell custom-class="card-footer">
+      <van-button 
+        type="primary" 
+        size="small" 
+        round 
+        data-id="{{ item.title }}" 
+        bind:click="onShowDetail">详情
+      </van-button>
+    </van-cell>
+  </van-cell-group>
+
+
+  <!-- 资产详情 -->
+  <van-popup show="{{ showDetail }}" bind:close="onCloseDetail" position="right" custom-class="detail-container">
+    <van-cell title="我的资产详情" title-class="detail-title" size="large"/>
+    <van-cell-group wx:for="{{ assetDetail }}" wx:key="key" border="{{ false }}">
+      <van-cell 
+        title="{{ item.key }}" 
+        label="{{ item.value }}" 
+        custom-class="detail-item" 
+        border="{{ false }}"/>
+    </van-cell-group>
+
+    <cover-view class="detail-close"><van-icon name="clear" bind:click="onCloseDetail"/></cover-view>
+    
+  </van-popup>
+
+</view>

@@ -1,0 +1,96 @@
+/**index.wxss**/
+@import '../../dist/common/index.wxss';
+page {
+  padding-bottom: 0;
+}
+
+.container {
+  padding: 45px 20px 20px;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: right;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.title {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.logo,
+.title-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title-text {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7d7e80;
+  margin: 0 0 45px;
+  padding-left: 15px;
+}
+
+.desc2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.scan-icon {
+  color: blueviolet
+}
+
+#asset_img {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.asset-img {
+  width: 80px;
+  height: 80px;
+  margin-left: 15px;
+}
+
+.hairline-margin {
+  margin-bottom: 15px;
+  height: 15px;
+}
+
+.photo-add-btn {
+  border: 1px solid #00BEBE;
+  padding: 15px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.submit-btn {
+  margin: 50px auto;
+  width: 150px;
+}

@@ -1,0 +1,59 @@
+/**index.wxss**/
+@import '../../dist/common/index.wxss';
+page {
+  padding-bottom: 0;
+}
+
+.container {
+  padding: 45px 20px 20px;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: right;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.title {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.logo,
+.title-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title-text {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7d7e80;
+  margin: 0 0 45px;
+  padding-left: 15px;
+}

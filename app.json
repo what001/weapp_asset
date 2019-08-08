@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/list/list",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/backup/backup"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "lenovo资产管理",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "dist/icon/index",
+    "van-button": "dist/button/index",
+    "van-field": "dist/field/index",
+    "van-transition": "dist/transition/index",
+    "van-cell": "dist/cell/index",
+    "van-cell-group": "dist/cell-group/index",
+    "van-checkbox": "dist/checkbox/index",
+    "van-search": "dist/search/index",
+    "van-panel": "dist/panel/index",
+    "van-tag": "dist/tag/index",
+    "van-popup": "dist/popup/index",
+    "van-dialog": "dist/dialog/index"
+  }
+}

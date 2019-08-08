@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">
+    <!-- <image class="logo" src="" /> -->
+    <view class="title-text">资产盘点</view>
+  </view>
+  <view class="desc">请及时盘点名下资产</view>
+
+
+  <van-field
+    value="{{ assetNum }}"
+    required
+    clearable
+    label="资产编号"
+    icon="scan"
+    placeholder="手动或者扫码输入资产编号"
+    bind:click-icon="onClickScanIcon"
+    bind:blur="onAssetNumInput"
+    right-icon-class="scan-icon"
+  />
+
+
+  <van-transition show="{{ assetDetailShow }}" custom-class="block">
+    <van-cell-group>
+      <van-cell title="部门" value="{{ assetDetail.dept }}" />
+      <van-cell title="资产类型" value="{{ assetDetail.type }}" />
+      <van-cell title="资产描述" value="{{ assetDetail.desc }}" />
+    </van-cell-group>
+  </van-transition>
+
+  <view class="desc desc2">请将设备和二维码拍照上传</view>
+  <view id="asset_img">
+    <image class="asset-img" wx:for="{{ imgs }}" src="{{ item }}"></image>
+    <image class="asset-img" src="https://img.yzcdn.cn/vant/logo.png"></image>
+    <van-icon 
+      name="photograph" 
+      size="40px"
+      color="#00BEBE"
+      custom-class="photo-add-btn"
+      bind:click="takePhoto"
+    />
+  </view>
+
+  <view style="padding-left: 15px">
+    <view class="van-hairline--bottom hairline-margin"></view>
+
+    <van-checkbox value="{{ isQuestion }}" bind:change="onQuestion" checked-color="#00BEBE">是否有疑问</van-checkbox>
+
+    <view class="van-hairline--bottom hairline-margin"></view>
+  </view>
+
+
+  <van-field
+    value="{{ assetRemark }}"
+    clearable
+    placeholder="请输入备注"
+    label="备注"
+    type="textarea"
+    maxlength="200"
+    autosize
+  />
+
+  <view class="submit-btn">
+    <van-button 
+      type="primary"
+      size="large"
+      loading="{{ submitting }}"
+      loading-text="提交中"
+      bind:click="onSubmit"
+      > 提交 
+      
+    </van-button>
+  </view>
+
+</view>
