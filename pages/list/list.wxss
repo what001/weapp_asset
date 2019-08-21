@@ -52,3 +52,11 @@
   bottom: 100px;
   width: 100%;
 }
+
+.detail-close-btn {
+  animation: btnRotate .3s linear .5s;
+}
+@keyframes btnRotate{
+  from {transform: rotate(0deg);}
+  to {transform: rotate(180deg);}
+}

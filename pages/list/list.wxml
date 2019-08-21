@@ -47,8 +47,10 @@
         border="{{ false }}"/>
     </van-cell-group>
 
-    <cover-view class="detail-close"><van-icon name="clear" bind:click="onCloseDetail"/></cover-view>
+    <cover-view class="detail-close"><van-icon name="clear" bind:click="onCloseDetail" custom-class="detail-close-btn"/></cover-view>
     
   </van-popup>
+
+  <van-toast id="van-toast" />
 
 </view>
